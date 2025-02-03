@@ -135,7 +135,7 @@ if tickers:
             if st.button(f"Train Model for {stock_ticker}"):
                 model = build_lstm_model((X_train.shape[1], 1))
                 early_stop = EarlyStopping(monitor='loss', patience=5)
-                model.fit(X_train, y_train, epochs=50, batch_size=32, verbose=1, callbacks=[early_stop])
+                model.fit(X_train, y_train, epochs=30, batch_size=32, verbose=1, callbacks=[early_stop])
 
                 # Predictions
                 predictions = model.predict(X_test)
